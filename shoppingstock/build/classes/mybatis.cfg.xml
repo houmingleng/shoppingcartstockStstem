@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+<typeAliases>
+	<package name="com.uplooking.pojo"/>
+</typeAliases>
+
+	<!-- 环境 -->
+	<environments default="development">
+		<!-- 对应的某个环境 -->
+		<environment id="development">
+			<!-- 事物 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!-- 连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/xiangmubiao?serverTimezone=UTC&amp;useSSL=false" />
+				<property name="username" value="root" />
+				<property name="password"  value="123456" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+	<mapper resource="com/uplooking/dao/Tbl_sj_memberMapper.xml" />
+	<mapper resource="com/uplooking/dao/Tbl_sj_goodsinfoMapper.xml" />
+	<mapper resource="com/uplooking/dao/Tbl_sj_addressMapper.xml" />
+	<mapper resource="com/uplooking/dao/Tbl_sj_orderMapper.xml" />
+	<mapper resource="com/uplooking/dao/Tbl_sj_orderdetailMapper.xml" />
+	<mapper resource="com/uplooking/dao/Tbl_ds_memberMapper.xml" />
+	
+	</mappers>
+</configuration>

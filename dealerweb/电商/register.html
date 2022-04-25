@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册页</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<script>
+
+$(function(){	
+	// 注册登录切换
+	$('.deg_nav li').click(function(e) {
+        //第一步：让当前背景颜色变口红，让其实兄弟们变灰色       
+		$(this).css('border-bottom','2px solid #ff4700').siblings().css('border-bottom','2px solid #ccc');
+		 var index = $(this).index();
+		 // console.log($('deg_centent li').eq(index));
+		 $('.deg_centent li').eq(index).show().siblings().hide();
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+<div id="bar">
+	<div class="bar_in">
+    	<p class="bar_l">
+    		<span>喵，欢迎来到天猫！</span>
+    		<a href="#">请登录</a>
+    		<a href="#">免费注册</a>
+    	</p>
+        <ul class="bar_r">
+        	<li class="three"><span></span><a href="#">我的淘宝</a></li>
+        	<li class="two"><span></span><a href="#">我关注的品牌</a></li>
+        	<li class="two"><span style="background-position: 0 -32px;"></span><a href="#">购物车0件</a></li>
+        	<li class="one"><span></span><a href="#">收藏夹</a></li>
+        	<li class="two phone"><span style="margin-left: 12px;background-position: 0 -64px;"></span><a href="#">手机版</a></li>
+        	<li><span></span><a href="#">淘宝网</a></li>
+        	<li><span></span><a href="#">企业采购</a></li>
+        	<li class="three"><span></span><a href="#">商家支持</a></li>
+        	<li class="two three daohang">
+                <span style="background-position: 0 -96px;"></span>
+                <a href="#">网站导航</a>
+            </li>
+        </ul>
+        <div class="dhs"><img src="images/bar06.png" width="1199" height="250" alt=""/></div>
+    	<div class="erwei">
+        	<span class="top"></span>
+            <a href="#" class="down"></a>
+        </div>
+    
+    
+    
+    </div>
+</div>
+<div class="deg_logo">
+	<img src="images/deg_logo.png" alt="">
+</div>
+<div class="all">
+	<!-- 切换导航 -->
+  	 <ul class="deg_nav">
+	   	<li class="nav_current" >用户注册</li>
+	   	<li>用户登录</li>
+  	 </ul>
+
+	<ul class="deg_centent">
+	<!-- 注册 -->
+	  	<li style="display: block;">
+	  		<div>
+	  			<p>用户名</p>
+	  			<input type="text" placeholder="请输入您的用户名">
+	  		</div>
+	  		<div>
+	  			<p>密码</p>
+	  			<input type="text" placeholder="请输入用户密码">
+	  		</div>
+	  		<div>
+	  			<p>确认密码</p>
+	  			<input type="text" placeholder="请重新确认密码">
+	  		</div>
+	  		<div>
+	  			<p>手机号</p>
+	  			<input type="text" placeholder="请输入您的手机号">
+	  		</div>
+	  		<div>
+	  			<p>验证码</p>
+	  			<input type="text" placeholder="请输入手机验证码">
+	  		</div>
+	  		<a class="deg_next"  data-reveal-id="myModal">注册</a>
+	  	</li>
+	  	<!-- 登录 -->
+        <li  class="current" >
+        	<div>
+	  			<p>用户名</p>
+	  			<input type="text" placeholder="请输入您的用户名">
+	  		</div>
+	  		<div>
+	  			<p>密码</p>
+	  			<input type="text" placeholder="请输入用户密码">
+	  		</div>
+	  		
+	  		<a class="deg_next" href="index.html" >登录</a>
+        </li>
+       
+	</ul>
+</div>
+
+   <!--  注册弹框-->
+    <div id="myModal" class="reveal-modal " style="visibility:hidden;">
+
+        <p class="ttop" style="">注册成功,请直接登录！</p>
+
+        <div class="c_down">
+            <input type="button" value="确定" class="close-reveal-modal">        
+        </div>
+    </div>
+
+</body>
+</html>

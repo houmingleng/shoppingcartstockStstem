@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/reg.js"></script>
+        <script type="text/javascript" src="js/Grid.js"></script>
+        <title>登录界面</title>
+    </head>
+    <script>
+        $(function(){
+            // 布局框架引用
+            grid = new Grid();
+            grid.init(document.body);
+            grid.update();
+            $(window).resize(function(){
+                grid.resize();
+            });
+            // 注册登录切换
+            $(".regbut").click(function(){  
+                $(".regbox").css("display","block");
+                 $(".landbox02").css("display","none");
+            });
+            $(".lanbut").click(function(){  
+                $(".landbox02").css("display","block");
+                $(".regbox").css("display","none");
+
+            });
+
+        });
+    </script>
+    <body background="img/background.jpg" style="overflow: hidden;">
+        <div class="gridRow">*</div>
+        <div class="gridCol">*</div>
+    <!-- 登录 -->
+       <div id="loginsDiv" class="landbox landbox02" style="display: none;">
+            <div class="land_title">
+                <img src="img/logo01.png" alt="" class="logo">
+                <p>糖力后台管理系统</p>
+            </div>
+            <div class="land_user land_input">
+                <img src="img/land_user.png" alt="">
+                <input type="text" name="account" id="loginaccount" placeholder="请输入用户名">
+            </div>
+            <div class="land_word land_input">
+                <img src="img/land_word.png" alt="">
+                <input type="password" name="password" id="loginpassword" placeholder="请输入用户密码">
+            </div>
+            <div class="register">
+                <p style="float: left;" class="regbut">注册新用户</p>
+                <p  style="float: right;">忘记密码?</p>
+                <br>
+                <span id="span3"></span>
+            </div>
+            <div class="land_button land_input"  id="login">
+               登陆
+            </div>
+        </div>
+        <!-- 注册 -->
+        <div id="regsDiv" class="landbox regbox">
+            <div class="land_title">
+                <img src="img/logo01.png" alt="" class="logo">
+                <p>糖力后台管理系统</p>
+            </div>
+            <div class="land_user land_input">
+                <img src="img/land_user.png" alt="">
+                <input type="text" name="account" id="regaccount" placeholder="请输入用户名">
+                <span id="span1"></span>
+            </div>
+            <div class="land_word land_input">
+                <img src="img/land_word.png" alt="">
+                <input type="password" name="password" id="regpassword" placeholder="请输入用户密码">
+            </div>
+             <div class="land_word land_input" >
+                <img src="img/land_word.png" alt="">
+                <input type="password" name="repwd" id="regpwd" placeholder="确认用户密码">
+                <br><br><br>
+                <span id="span2"></span>
+            </div>
+            <div class="register">
+                <p style="float: left;"  class="lanbut">已注册，直接登录</p>
+            </div>
+            <div  class="land_button land_input"  id="reg">
+               注册
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <link rel="stylesheet" href="css/style.css">
+         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+         <!-- 登录后跳转页面显示姓名和籍贯的js -->
+         <script type="text/javascript" src="js/update.js"></script>
+         <script type="text/javascript" src="js/index.js"></script>
+         <script type="text/javascript" src="js/Grid.js"></script>
+         <title>个人信息修改</title>
+    </head>
+    <script>
+        $(function(){
+            grid = new Grid();
+            grid.init(document.body);
+            grid.update();
+            $(window).resize(function(){
+            grid.resize();
+        });
+});
+    </script>
+    <body>
+        <div class="gridRow">*</div>
+        <div class="gridCol">*</div>
+    
+        <div class="new_center">
+            <div class="gridRow">*</div>
+            <div class="gridCol">250,*</div>
+
+        
+        <!--框架左侧导航条  -->
+        <div class="kj_sidebar" grid="0,0">       
+            <div class="nav_txt">  
+            <!-- 导航logo -->
+                <div class="nav_top"><img src="img/logo03.png" alt="" ></div> 
+                <!-- 导航用户信息 -->
+                <div class="username">
+                    <img src="img/photo.png" alt="" class="photo">
+                    <div class="name">
+                        <p class="p1">Welcome</p>
+                        <p id="pac1" class="p2">Jomn Don</p>
+                    </div>
+                </div>
+                <!-- 导航条 -->
+                <ul>
+                    <li class="home"><a href=""><img src="img/nav_home.png" alt=""><span  id="aa">首页</span></a></li>
+                    <li><a href="update.html"><img src="img/nav_guide.png" alt=""><span>基本设置</span></a></li>
+                    <li><a href="orderOpertion.html"><img src="img/nav_link.png" alt=""><span>订单管理</span></a></li>
+                    <li><a href="index.html"><img src="img/nav_administration.png" alt=""><span>产品管理</span></a></li>
+                    <li><a href=""><img src="img/nav_visualization.png" alt=""><span>库存管理</span></a></li>
+                    <li><a href=""><img src="img/nav_engine.png" alt=""><span>售后管理</span></a></li>
+                    <li><a href=""><img src="img/nav_user.png" alt=""><span>资金流水</span></a></li>
+                     <li><a href="Ds_member.html"><img src="img/nav_visualization.png" alt=""><span>会员管理</span></a></li>
+                    <li><a href=""><img src="img/nav_engine.png" alt=""><span>员工管理</span></a></li>
+                </ul>
+            </div>
+         </div>    
+           <!-- 信息展示区 -->
+        <div class="home_center" grid="0,1">
+                <div class="gridRow">60,*</div>
+                <div class="gridCol">*</div>
+                <!-- 页面头部 -->
+                <div class="home_top" grid="0,0">
+                    <div class="username_top">
+                        <img src="img/photo.png" alt="" class="photo">
+                        <div class="name">
+                            <p id="pac2" class="p1">Jomn Don</p>
+                            <p id="pplace" class="p2">AMERICAN</p>
+                        </div>
+                        <a class="top_list"><img src="img/top_list.png" alt=""></a>
+                    </div>
+                </div>
+                <!-- 工作区 -->
+                <div class="workarea" grid="1,0"> 
+                     <!-- 路径 -->
+                     <div class="route">
+                        <span class="sp01">ROUTE:</span>
+                        <span class="sp02"><a href="">基本设置></a><a href="">个人信息修改></a></span> 
+                    </div>
+                      <!-- 数据表格 -->
+            <div class="paging_table">
+                <!-- 表头 -->
+                <div class="list_top">
+                    <div class="list_title">个人信息修改</div>
+                    <!-- <a  href="" class="est_button big-link"  data-reveal-id="myModal">
+                         <img src="img/estadd.png" alt="">
+                         <span>创建分类项</span>
+                    </a>
+                    <div class="search">
+                        <input type="text" placeholder="请输入查询条件">
+                        <img src="img/sech_button.png" alt="">
+                    </div>
+                     <div class="search">
+                        <input type="text" placeholder="请输入查询条件">
+                        <img src="img/sech_button.png" alt="">
+                    </div> -->
+                </div>
+                <!-- 数据表 -->
+                <table>
+                    <thead>
+                       <tr class="current">
+                            <th style="width:5%;">会员ID</th>
+                            <th style="width:5%;">会员账号</th>
+                            <th style="width:5%;">会员性别</th>
+                            <th style="width:10%;">真实姓名</th>
+                            <th style="width:5%;">电话号码</th>
+                            <th style="width:5%;">籍贯</th>
+                            <th style="width:8%;">状态</th>
+                            <th style="width:8%;">积分</th>
+                            <th style="width:8%;">备注</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbo">
+                      <tr>
+                      <td><input type="text" name="memberid" id="inp1" size="15" style="width:25px;text-align: center;" readonly="readonly"></td>
+                      <td><input type="text" name="account"  id="inp2" size="15" style="text-align: center;" readonly="readonly"></td>
+                      <td><input type="text" name="sex"  id="inp3" size="15" style="text-align: center;"></td>
+                      <td><input type="text" name="realname"  id="inp4" size="15" style="text-align: center;"></td>
+                      <td><input type="text" name="mobile"  id="inp5" size="15" style="text-align: center;"></td>
+                      <td><input type="text" name="place"  id="inp6" size="15" style="text-align: center;"></td>
+                      <td><input type="text" name="stat"  id="inp7" size="15" style="text-align: center;"  readonly="readonly"></td>
+                      <td><input type="text" name="score"  id="inp8" size="15" style="text-align: center;"  readonly="readonly"></td>
+                      <td><input type="text" name="note"  id="inp9" size="15" style="text-align: center;"></td>
+                      </tr>
+                    </tbody>
+               </table>
+               <!-- 分页 -->
+             <!--   <ul class="pag chjbuz" id="fenye">
+                   <li>共</li>
+                   <li><input type="text" value="1" id="inp"></li>
+                   <li>页</li>
+                   <li><img src="img/upper.png" alt="" id="jian"></li>
+                   <li><input type="text" class="jump"></li>
+                   <li id="qd">确定</li>
+                   <li><img src="img/lower.png" alt="" id="jia"></li>
+               </ul> -->
+
+                
+            </div>
+                </div>
+
+
+        </div>
+    </div>
+    </body>
+</html>

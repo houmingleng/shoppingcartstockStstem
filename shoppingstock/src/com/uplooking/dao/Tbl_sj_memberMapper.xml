@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.uplooking.dao.Tbl_sj_memberMapper">
+       <insert id="add" parameterType="Tbl_sj_member">
+         insert into tbl_sj_member values(null,#{account},#{logpwd},null,null,null,#{regdate},null,0,0,null);
+       </insert>
+       
+       <select id="findOne" resultType="Tbl_sj_member">
+          select * from tbl_sj_member where account=#{0};
+       </select>
+       <select id="findAll" resultType="Tbl_sj_member">
+           select * from tbl_sj_member;
+       </select>
+       
+       <update id="update" parameterType="Tbl_sj_member">
+        update tbl_sj_member set sex=#{sex},realname=#{realname},
+        mobile=#{mobile},place=#{place} where account=#{account};
+       </update>
+       
+</mapper>
